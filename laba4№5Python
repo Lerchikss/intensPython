@@ -1,0 +1,5 @@
+print("Дюймы\tСантиметры")
+print("-----------------")
+for i in range(1, 21):
+    cm = i * 2.54
+    print(f"{i}\t{cm}")
