@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+float perimeter(float base, float height) {
+    float side = sqrt((base/2)*(base/2) + height*height); // находим длину боковой стороны по формуле Пифагора
+    return base + 2*side; // вычисляем периметр равнобедренного треугольника
+}
+
+int main() {
+    float base, height;
+    printf("Введите длину основания и высоту равнобедренного треугольника: ");
+    scanf("%f %f", &base, &height);
+    
+    float p = perimeter(base, height);
+    
+    printf("Периметр равнобедренного треугольника = %.2f\n", p);
+    
+    return 0;
+}
