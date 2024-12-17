@@ -1,0 +1,46 @@
+#include 
+
+using namespace std;
+
+int main()
+{
+int N, m;
+cout << "Enter the size of the matrix: ";
+cin >> N;
+// Create a matrix of size N x N
+vector<vector<int>> A(N, vector<int>(N));
+
+// Initialize the matrix
+for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+        cout << "Enter element A[" << i << "][" << j << "]: ";
+        cin >> A[i][j];
+    }
+}
+
+// Find the row with the maximum element on the main diagonal
+int maxElement = A[0][0];
+int maxRow = 0;
+for (int i = 1; i < N; i++) {
+    if (A[i][i] > maxElement) {
+        maxElement = A[i][i];
+        maxRow = i;
+    }
+}
+cout << "Enter the row number m (m <= N): ";
+cin >> m;
+for (int i = 0; i < N; i++) {
+    int temp = A[maxRow][i];
+    A[maxRow][i] = A[m][i];
+    A[m][i] = temp;
+}
+cout << "Updated matrix:" << endl;
+for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+        cout << A[i][j] << " ";
+    }
+    cout << endl;
+}
+
+return 0;
+}
