@@ -1,0 +1,27 @@
+#include <stdio.h>
+int findLocalMax(int arr[], int size) {
+int i, localMax = -1;
+for (i = 1; i < size - 1; i++) {
+    if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+        if (localMax == -1 || arr[i] < localMax) {
+            localMax = arr[i];
+        }
+    }
+}
+
+return localMax;
+}
+
+int main() {
+int arr[] = {3, 8, 5, 9, 2, 7, 4};
+int size = sizeof(arr) / sizeof(arr[0]);
+int result = findLocalMax(arr, size);
+
+if (result != -1) {
+    printf("Минимальный локальный максимум: %d\n", result);
+} else {
+    printf("Локальных максимумов нет\n");
+}
+
+return 0;
+}
