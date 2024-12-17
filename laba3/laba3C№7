@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+int main(){
+    int mast, dost;
+    
+    printf("Введите номер масти (1 - пики, 2 - трефы, 3 - бубны, 4 - червы): ");
+    scanf("%d", &mast);
+    
+    printf("Введите номер достоинства карты (от 2 до 14): ");
+    scanf("%d", &dost);
+    
+    switch(mast){
+        case 1:
+            printf("Пики ");
+            break;
+        case 2:
+            printf("Трефы ");
+            break;
+        case 3:
+            printf("Бубны ");
+            break;
+        case 4:
+            printf("Червы ");
+            break;
+        default:
+            printf("Неверный номер масти!");
+            return 1;
+    }
+    
+    switch(dost){
+        case 2:
+            printf("Двойка\n");
+            break;
+        case 3:
+            printf("Тройка\n");
+            break;
+        case 4:
+            printf("Четверка\n");
+            break;
+        case 5:
+            printf("Пятерка\n");
+            break;
+        case 6:
+            printf("Шестерка\n");
+            break;
+        case 7:
+            printf("Семерка\n");
+            break;
+        case 8:
+            printf("Восьмерка\n");
+            break;
+        case 9:
+            printf("Девятка\n");
+            break;
+        case 10:
+            printf("Десятка\n");
+            break;
+        case 11:
+            printf("Валет\n");
+            break;
+        case 12:
+            printf("Дама\n");
+            break;
+        case 13:
+            printf("Король\n");
+            break;
+        case 14:
+            printf("Туз\n");
+            break;
+        default:
+            printf("Неверный номер достоинства карты!");
+            return 1;
+    }
+    
+    return 0;
+}
