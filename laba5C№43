@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int n = 30;
+    int fib1 = 0, fib2 = 1, sum = 0;
+    int i = 1;
+
+    while(i <= n) {
+        int nextFib = fib1 + fib2;
+        sum += fib1;
+        fib1 = fib2;
+        fib2 = nextFib;
+        i++;
+    }
+
+    printf("Сумма первых %d чисел Фибоначчи: %d\n", n, sum);
+
+    return 0;
+}
