@@ -1,0 +1,22 @@
+def min_sorted_row(matrix):
+    sorted_rows = []
+    for row in matrix:
+        if row == sorted(row) or row == sorted(row, reverse=True):
+            sorted_rows.append(row)
+    
+    if not sorted_rows:
+        return 0
+    
+    min_element = min([min(row) for row in sorted_rows])
+    return min_element
+
+M = int(input("Введите количество строк: "))
+N = int(input("Введите количество столбцов: "))
+
+matrix = []
+for i in range(M):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+result = min_sorted_row(matrix)
+print("Минимальный элемент среди упорядоченных строк:", result)
