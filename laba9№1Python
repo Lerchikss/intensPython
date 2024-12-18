@@ -1,0 +1,10 @@
+r = float(input("Введите радиус основания цилиндра: "))
+h = float(input("Введите высоту цилиндра: "))
+
+import math
+
+volume = math.pi * r**2 * h
+lateral_area = 2 * math.pi * r * h
+
+print("Объем цилиндра:", volume)
+print("Площадь боковой поверхности цилиндра:", lateral_area)
