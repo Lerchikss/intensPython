@@ -1,0 +1,29 @@
+rows = int(input("Введите количество строк матрицы: "))
+cols = int(input("Введите количество столбцов матрицы: "))
+
+matrix = []
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input(f"Введите элемент матрицы [{i}][{j}]: ")))
+    matrix.append(row)
+
+min_element = matrix[0][0]
+max_element = matrix[0][0]
+min_row = 0
+max_row = 0
+
+for i in range(rows):
+    for j in range(cols):
+        if matrix[i][j] < min_element:
+            min_element = matrix[i][j]
+            min_row = i
+        elif matrix[i][j] > max_element:
+            max_element = matrix[i][j]
+            max_row = i
+
+matrix[min_row], matrix[max_row] = matrix[max_row], matrix[min_row]
+
+print("Измененная матрица:")
+for row in matrix:
+    print(row)
